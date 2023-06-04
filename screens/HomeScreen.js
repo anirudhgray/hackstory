@@ -4,7 +4,7 @@ import tw from '../lib/tailwind';
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView style={tw`bg-white dark:bg-black h-full relative`}>
+    <SafeAreaView style={tw`bg-white h-full relative`}>
       <View>
         <Text>HomeScreen</Text>
       </View>

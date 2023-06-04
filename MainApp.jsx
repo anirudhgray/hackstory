@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Provider} from 'react-redux';
 // import HomeScreen from './screens/HomeScreen';
 // import OtherScreen from './screens/OtherScreen';
@@ -16,10 +16,13 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import HomeStack from './navigation/HomeStack';
 import AuthStack from './navigation/AuthStack';
+import ChallengesScreen from './screens/ChallengesScreen';
+import ProfileScreen from './screens/ProfileScreen';
+// import {initialiseStore} from './slices/AuthSlice';
 
 function MainApp() {
   useDeviceContext(tw);
-  const [colorScheme] = useAppColorScheme(tw);
+  // const [colorScheme] = useAppColorScheme(tw);
 
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
@@ -28,28 +31,35 @@ function MainApp() {
     headerShown: false,
   };
 
-  const auth = useSelector(state => state.auth);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(initialiseStore());
+  // }, [dispatch]);
+
+  const auth = useSelector(state => {
+    return state.auth;
+  });
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <SafeAreaProvider>
-          {auth.token ? (
-            <Tab.Navigator screenOptions={navigatorOptions}>
-              <Tab.Screen name="Home" component={HomeStack} />
-            </Tab.Navigator>
-          ) : (
-            <Stack.Navigator screenOptions={navigatorOptions}>
-              <Stack.Screen name="Auth" component={AuthStack} />
-            </Stack.Navigator>
-          )}
-          <StatusBar
-            backgroundColor={colorScheme === 'dark' ? 'black' : 'white'}
-            barStyle={'dark-content'}
-          />
-        </SafeAreaProvider>
-      </NavigationContainer>
-    </Provider>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        {auth && auth.token ? (
+          <Tab.Navigator screenOptions={navigatorOptions}>
+            <Tab.Screen name="Home" component={HomeStack} />
+            <Tab.Screen name="Challenges" component={ChallengesScreen} />
+            <Tab.Screen name="Profile" component={ProfileScreen} />
+          </Tab.Navigator>
+        ) : (
+          <Stack.Navigator screenOptions={navigatorOptions}>
+            <Stack.Screen name="Auth" component={AuthStack} />
+          </Stack.Navigator>
+        )}
+        {/* <StatusBar
+            // backgroundColor={colorScheme === 'dark' ? 'black' : 'white'}
+            // barStyle={'dark-content'}
+          /> */}
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
 
