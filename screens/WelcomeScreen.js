@@ -9,6 +9,10 @@ const WelcomeScreen = () => {
   return (
     <SafeAreaView style={tw`bg-white flex flex-col h-full relative p-12`}>
       <Image style={tw`absolute ml-6`} source={require('../assets/blob.png')} />
+      <Image
+        style={{width: 37, height: 44, alignSelf: 'center'}}
+        source={require('../assets/logoBlack.png')}
+      />
       <Text style={tw`text-xl mb-3 mt-8 text-black`}>Welcome,</Text>
       <Text style={tw`text-black mb-10`}>
         Discover the vibrant tapestry of Delhi, where history meets modernity.

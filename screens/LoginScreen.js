@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView, Image} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import tw from '../lib/tailwind';
 import {Input, Icon, Button} from '@rneui/themed';
@@ -44,6 +44,10 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={tw`bg-white flex flex-col h-full relative p-5 px-8`}>
+      {/* <Image
+        style={{width: 37, height: 44, alignSelf: 'center', marginBottom: 5}}
+        source={require('../assets/logoBlack.png')}
+      /> */}
       <AuthTabBar login />
       <View style={tw`grow`}>
         <TextInput

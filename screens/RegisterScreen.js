@@ -1,4 +1,4 @@
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView, Image} from 'react-native';
 import React, {useState} from 'react';
 import AuthTabBar from '../components/AuthTabBar';
 import tw from '../lib/tailwind';
@@ -48,6 +48,10 @@ const RegisterScreen = () => {
 
   return (
     <SafeAreaView style={tw`bg-white flex flex-col h-full relative p-5 px-8`}>
+      {/* <Image
+        style={{width: 25, height: 28, alignSelf: 'center', marginBottom: 5}}
+        source={require('../assets/logoBlack.png')}
+      /> */}
       <AuthTabBar />
       <View style={tw`grow`}>
         <TextInput
