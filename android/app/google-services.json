@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "907336710962",
+    "project_id": "hackstory-23-delhi",
+    "storage_bucket": "hackstory-23-delhi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907336710962:android:fd3bc0a9f68b9481fef52b",
+        "android_client_info": {
+          "package_name": "com.hackstory23delhi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907336710962-l1fdj05c4mko1c7e647adbckn645ibun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackstory23delhi",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "907336710962-0m37buop58gjbtciqsega4g0h10mm896.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL_m-fC_C_nkVCuCTQFLhZcKfbxGLUPtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907336710962-0m37buop58gjbtciqsega4g0h10mm896.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
