@@ -18,6 +18,7 @@ import HomeStack from './navigation/HomeStack';
 import AuthStack from './navigation/AuthStack';
 import ChallengesScreen from './screens/ChallengesScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
 // import {initialiseStore} from './slices/AuthSlice';
 
 function MainApp() {
@@ -51,6 +52,7 @@ function MainApp() {
           </Tab.Navigator>
         ) : (
           <Stack.Navigator screenOptions={navigatorOptions}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
             <Stack.Screen name="Auth" component={AuthStack} />
           </Stack.Navigator>
         )}

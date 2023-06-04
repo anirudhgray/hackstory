@@ -26,7 +26,7 @@ const ProfileScreen = () => {
           style={tw.style('px-3 py-2 mb-5 bg-blue-100 rounded-full mt-3', {
             width: 80,
           })}>
-          {user.tourist ? 'Tourist' : 'Native'}
+          {user.tourist}
         </Text>
         <Button
           onPress={submitLogout}

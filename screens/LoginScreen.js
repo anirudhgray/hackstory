@@ -8,6 +8,7 @@ import {useDispatch} from 'react-redux';
 import {setUserInfo} from '../slices/AuthSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AuthTabBar from '../components/AuthTabBar';
+import {TextInput} from 'react-native-gesture-handler';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -42,21 +43,29 @@ const LoginScreen = () => {
   };
 
   return (
-    <SafeAreaView style={tw`bg-white h-full relative p-5`}>
+    <SafeAreaView style={tw`bg-white flex flex-col h-full relative p-5 px-8`}>
       <AuthTabBar login />
-      <View>
-        <Input
+      <View style={tw`grow`}>
+        <TextInput
           placeholder="doriangray@painting.wall"
           value={email}
           onChangeText={value => setEmail(value)}
+          style={tw`px-4 bg-highlight rounded-full`}
         />
-        <Input
+        <TextInput
           placeholder="Password"
           value={password}
           onChangeText={value => setPassword(value)}
           secureTextEntry
+          style={tw`mt-5 mb-auto px-4 bg-highlight rounded-full`}
         />
-        <Button onPress={login} type="submit" title={'Login'} />
+        <Button
+          buttonStyle={tw`bg-buttons rounded-full`}
+          titleStyle={tw`text-black`}
+          onPress={login}
+          type="submit"
+          title={'Login'}
+        />
       </View>
     </SafeAreaView>
   );

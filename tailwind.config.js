@@ -147,6 +147,8 @@ module.exports = {
     },
     caretColor: ({theme}) => theme('colors'),
     colors: ({colors}) => ({
+      highlight: '#FFF0D9',
+      buttons: '#FFD1B4',
       theme1mood1: '#ef4444',
       theme1mood2: '#eab308',
       theme1mood3: '#3b82f6',
