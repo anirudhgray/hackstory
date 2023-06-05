@@ -6,6 +6,7 @@ import {Button, Chip} from '@rneui/themed';
 import {useDispatch} from 'react-redux';
 import {logout} from '../slices/AuthSlice';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
+import Header from '../components/Header';
 
 const ProfileScreen = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,9 @@ const ProfileScreen = () => {
   };
   const user = useSelector(state => state.auth);
   return (
-    <SafeAreaView style={tw`bg-white h-full relative p-5`}>
-      <View>
+    <SafeAreaView style={tw`bg-white h-full relative`}>
+      <Header title="Your Profile" />
+      <View style={tw`p-5`}>
         <Text style={tw`text-2xl text-black`}>Hi, {user.name}.</Text>
         <Text style={tw`text-slate-400`}>{user.email}</Text>
         <Text

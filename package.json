@@ -33,6 +33,7 @@
     "react-native-drawer": "^2.5.1",
     "react-native-gesture-handler": "^2.10.2",
     "react-native-maps": "^1.7.1",
+    "react-native-masonry-list": "^2.16.1",
     "react-native-outside-press": "^1.1.0",
     "react-native-pager-view": "^6.2.0",
     "react-native-paper": "^5.8.0",

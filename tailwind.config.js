@@ -122,6 +122,7 @@ module.exports = {
       8: '8px',
     },
     boxShadow: {
+      bottomright: '10px 10px 5px #ffb452',
       sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
       DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
       md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
@@ -147,6 +148,7 @@ module.exports = {
     },
     caretColor: ({theme}) => theme('colors'),
     colors: ({colors}) => ({
+      shadow: '#ffb452',
       highlight: '#FFF0D9',
       buttons: '#FFD1B4',
       theme1mood1: '#ef4444',
@@ -270,6 +272,7 @@ module.exports = {
     divideOpacity: ({theme}) => theme('borderOpacity'),
     divideWidth: ({theme}) => theme('borderWidth'),
     dropShadow: {
+      bottomright: '10px 10px 5px #ffb452',
       sm: '0 1px 1px rgb(0 0 0 / 0.05)',
       DEFAULT: ['0 1px 2px rgb(0 0 0 / 0.1)', '0 1px 1px rgb(0 0 0 / 0.06)'],
       md: ['0 4px 3px rgb(0 0 0 / 0.07)', '0 2px 2px rgb(0 0 0 / 0.06)'],

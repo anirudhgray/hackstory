@@ -29,21 +29,26 @@ const Header = ({title, showHamburger}) => {
 
   return (
     <OutsidePressHandler
+      style={tw`z-5`}
       onOutsidePress={() => {
         setActive(false);
       }}>
       <View
-        style={tw`relative w-screen flex flex-row justify-between items-center pl-3`}>
+        style={tw`relative w-screen flex flex-row justify-between items-center pl-7 ${
+          !showHamburger && 'p-7'
+        } z-1`}>
         <Text style={tw`text-3xl text-black`}>{title || ''}</Text>
-        <TouchableOpacity onPress={() => setActive(!active)} hitSlop={10}>
-          <Icon
-            style={tw`mt-1 p-3`}
-            type="MaterialIcons"
-            name="emoji-food-beverage"
-          />
-        </TouchableOpacity>
+        {showHamburger && (
+          <TouchableOpacity onPress={() => setActive(!active)} hitSlop={10}>
+            <Icon
+              style={tw`mt-1 p-7`}
+              type="MaterialIcons"
+              name="emoji-food-beverage"
+            />
+          </TouchableOpacity>
+        )}
         <View
-          style={tw`absolute bottom-0 right-0 mr-3 p-4 -mb-40 bg-highlight dark:bg-buttons ${
+          style={tw` z-3 absolute bottom-0 right-0 mr-3 p-4 -mb-40 bg-highlight dark:bg-buttons ${
             active ? '' : 'hidden'
           }`}>
           <Text style={tw`text-black font-bold`}>{user.name}</Text>
