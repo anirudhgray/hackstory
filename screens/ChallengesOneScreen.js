@@ -36,7 +36,7 @@ const ChallengesOneScreen = () => {
   }, []);
   return (
     <View style={tw`bg-white h-screen flex flex-col`}>
-      <Header title={'Challenges'} showHamburger />
+      <Header title={'Challenges #1'} showHamburger />
       <TouchableOpacity
         onPress={() => navigation.navigate('ChallengesScreen')}
         style={tw`flex flex-row shrink mx-8 items-center`}>
