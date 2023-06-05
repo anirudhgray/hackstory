@@ -14,7 +14,7 @@ const AuthTabBar = ({login}) => {
             style={tw`relative grow pt-5 pb-10 border-b border-black ${
               login ? 'border-solid' : 'border-dashed'
             }`}>
-            <Text style={tw`text-center`}>Login</Text>
+            <Text style={tw`text-black text-center`}>Login</Text>
             {login ? (
               <Image
                 style={tw`absolute bottom-0`}
@@ -30,7 +30,7 @@ const AuthTabBar = ({login}) => {
             style={tw`relative grow pt-5 pb-10 border-b border-black ${
               !login ? 'border-solid' : 'border-dashed'
             }`}>
-            <Text style={tw`text-center`}>Sign Up</Text>
+            <Text style={tw`text-black text-center`}>Sign Up</Text>
 
             {!login ? (
               <Image

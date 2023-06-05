@@ -58,13 +58,15 @@ const RegisterScreen = () => {
           placeholder="Dorian Gray"
           value={name}
           onChangeText={value => setName(value)}
-          style={tw`px-4 bg-highlight rounded-full`}
+          placeholderTextColor={'grey'}
+          style={tw`px-4 text-black bg-highlight rounded-full`}
         />
         <TextInput
           placeholder="doriangray@painting.wall"
           value={email}
           onChangeText={value => setEmail(value)}
-          style={tw`mt-5 px-4 bg-highlight rounded-full`}
+          placeholderTextColor={'grey'}
+          style={tw`mt-5 text-black px-4 bg-highlight rounded-full`}
         />
         <SegmentedControl
           style={tw`mt-5 rounded-full text-black`}
@@ -85,7 +87,8 @@ const RegisterScreen = () => {
           value={password}
           onChangeText={value => setPassword(value)}
           secureTextEntry
-          style={tw`mt-5 mb-auto px-4 bg-highlight rounded-full`}
+          placeholderTextColor={'grey'}
+          style={tw`mt-5 text-black mb-auto px-4 bg-highlight rounded-full`}
         />
         <Button
           buttonStyle={tw`bg-buttons rounded-full`}

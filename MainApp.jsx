@@ -19,10 +19,11 @@ import AuthStack from './navigation/AuthStack';
 import ChallengesScreen from './screens/ChallengesScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import MapScreen from './screens/MapScreen';
+import RootTabs from './navigation/RootTabs';
 // import {initialiseStore} from './slices/AuthSlice';
 
 function MainApp() {
-  useDeviceContext(tw);
   // const [colorScheme] = useAppColorScheme(tw);
 
   const Tab = createBottomTabNavigator();
@@ -45,11 +46,10 @@ function MainApp() {
     <NavigationContainer>
       <SafeAreaProvider>
         {auth && auth.token ? (
-          <Tab.Navigator screenOptions={navigatorOptions}>
-            <Tab.Screen name="Home" component={HomeStack} />
-            <Tab.Screen name="Challenges" component={ChallengesScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
-          </Tab.Navigator>
+          <Stack.Navigator screenOptions={navigatorOptions}>
+            <Stack.Screen name="Root" component={RootTabs} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
+          </Stack.Navigator>
         ) : (
           <Stack.Navigator screenOptions={navigatorOptions}>
             <Stack.Screen name="Welcome" component={WelcomeScreen} />

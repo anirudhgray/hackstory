@@ -23,7 +23,7 @@ const WelcomeScreen = () => {
         <TouchableOpacity onPress={() => navigation.push('Auth')}>
           <View
             style={tw`relative grow pt-5 border-b border-black border-solid`}>
-            <Text style={tw`text-right`}>Enter</Text>
+            <Text style={tw`text-right text-black`}>Enter</Text>
             <Image
               style={tw`absolute bottom-0`}
               source={require('../assets/metroLarge.png')}
