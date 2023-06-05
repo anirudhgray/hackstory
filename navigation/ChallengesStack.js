@@ -4,6 +4,7 @@ import ChallengesScreen from '../screens/ChallengesScreen.js';
 import {useWindowDimensions} from 'react-native';
 import 'react-native-gesture-handler';
 import ChallengesOneScreen from '../screens/ChallengesOneScreen.js';
+import PuzzleChallenge from '../screens/PuzzleChallenge.js';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,11 @@ const ChallengesStack = () => {
       <Stack.Screen
         name="ChallengesOneScreen"
         component={ChallengesOneScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PuzzleChallengeScreen"
+        component={PuzzleChallenge}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

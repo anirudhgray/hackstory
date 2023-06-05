@@ -21,7 +21,7 @@ const ChallengesOneScreen = () => {
   const fetchChallenges = async () => {
     try {
       const res = await axios.get('/api/challenge/all');
-      setChallenges(res.data);
+      setChallenges(res.data.reverse());
     } catch (error) {
       Toast.show({
         type: 'error',
@@ -36,7 +36,7 @@ const ChallengesOneScreen = () => {
   }, []);
   return (
     <View style={tw`bg-white h-screen flex flex-col`}>
-      <Header title={'Challenges #1'} showHamburger />
+      <Header title={'Puzzle'} showHamburger />
       <TouchableOpacity
         onPress={() => navigation.navigate('ChallengesScreen')}
         style={tw`flex flex-row shrink mx-8 items-center`}>
@@ -52,11 +52,16 @@ const ChallengesOneScreen = () => {
         {challenges.map(item => {
           return (
             <TouchableOpacity
+              onPress={() =>
+                navigation.navigate('PuzzleChallengeScreen', {
+                  ...item,
+                })
+              }
               key={item._id}
               style={tw`bg-white p-2 mx-10 my-4 shadow-shadow shadow-xl items-center rounded-xl`}>
               {item.image && (
                 <Image
-                  style={{width: 150, height: 150, margin: 20}}
+                  style={{width: 150, height: 180, margin: 20}}
                   source={{
                     uri: `data:image/png;base64,${item.image}`,
                   }}
