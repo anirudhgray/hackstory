@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Laila-Bold.ttf",
+      "sha1": "b5e8f6d59b1335aef0ee214b3f96602bc7a31f1c"
+    },
+    {
+      "path": "assets/fonts/Laila-Light.ttf",
+      "sha1": "02f3cb90539c24f8d0c5980ec73648b4f464c92e"
+    },
+    {
+      "path": "assets/fonts/Laila-Medium.ttf",
+      "sha1": "21c9bcb14879a362bea65f789b0d40bc2b09889b"
+    },
+    {
+      "path": "assets/fonts/Laila-Regular.ttf",
+      "sha1": "3043ce1fbedbd1853c8f3c9e33c2a360ff31f07a"
+    },
+    {
+      "path": "assets/fonts/Laila-SemiBold.ttf",
+      "sha1": "4556c7afc6ce2a22862c46a0ba3d9d6ef15462e6"
+    }
+  ]
+}

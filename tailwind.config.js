@@ -331,7 +331,9 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      laila: ['Laila-Regular', 'sans-serif'],
       sans: [
+        'Laila-Regular',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',

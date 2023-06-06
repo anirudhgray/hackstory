@@ -49,7 +49,7 @@ const LoginScreen = () => {
         source={require('../assets/logoBlack.png')}
       /> */}
       <AuthTabBar login />
-      <View style={tw`grow`}>
+      <View style={tw`grow mt-5`}>
         <TextInput
           placeholder="doriangray@painting.wall"
           value={email}

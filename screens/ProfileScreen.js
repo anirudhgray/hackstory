@@ -55,59 +55,52 @@ const ProfileScreen = () => {
         <Icon name="keyboard-arrow-left" type="MaterialIcons" />
         <Text style={tw`text-black`}>back</Text>
       </TouchableOpacity>
-      <View style={tw`px-5 mt-5`}>
-        <Text style={tw`text-2xl text-black`}>Hi, {user && user.name}.</Text>
-        <Text style={tw`text-slate-400`}>{user && user.email}</Text>
-        <Text style={tw`text-slate-400`}>Points: {user && user.points}</Text>
-        <Text
-          style={tw.style(
-            'text-black px-3 py-2 mb-5 bg-blue-100 rounded-full mt-3',
-            {
-              width: 80,
-            },
-          )}>
+      <View style={tw`mx-8 mt-4 grow flex flex-col items-center`}>
+        <Image source={require('../assets/emily.png')} />
+        <Text style={tw`mt-4 text-lg text-black`}>{user && user.name}</Text>
+        <Text style={tw`mt-4 text-sm text-black`}>
           {user && (user.tourist ? 'Tourist' : 'Native')}
         </Text>
-        <Text style={tw`text-black`}>Your Completed Challenges</Text>
-        <View style={tw`grow mb-18 mt-3 mt-5`}>
-          {user &&
-            user.completedChallenges.map(item => {
-              return (
-                <TouchableOpacity
-                  key={item._id}
-                  style={tw`bg-white p-2 mx-10 my-4 shadow-shadow shadow-xl items-center rounded-xl`}>
-                  {item.image && (
-                    <Image
-                      style={{width: 150, height: 150, margin: 20}}
-                      source={{
-                        uri: `data:image/png;base64,${item.image}`,
-                      }}
-                    />
-                  )}
-                  <Text style={tw`text-black flex-wrap`}>{item.title}</Text>
-                  {item.clue && (
-                    <Text style={tw`mt-3 text-black flex-wrap`}>
-                      Clue: {item.clue}
-                    </Text>
-                  )}
-                  {item.region && (
-                    <Text style={tw`mt-3 text-black flex-wrap`}>
-                      Region: {item.region}
-                    </Text>
-                  )}
-                  <Text style={tw`mt-3 text-black flex-wrap`}>
-                    Points: {item.points}
-                  </Text>
-                </TouchableOpacity>
-              );
-            })}
+        <View style={tw`flex flex-row items-center`}>
+          <Image
+            style={tw`mt-5 mr-3`}
+            source={require('../assets/level.png')}
+          />
+          <View>
+            <Text style={tw`mt-4 text-lg text-center text-black`}>
+              {user && user.points}
+            </Text>
+            <Text style={tw`text-xs text-black`}>Total Points</Text>
+          </View>
         </View>
-        <Button
-          onPress={submitLogout}
-          style={tw`mt-4 rounded-xl`}
-          color={'red'}
-          title="Logout"
-        />
+        {user && (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('UserChallengesScreen', {
+                ...user,
+              })
+            }
+            style={tw`w-full p-4 rounded-xl mt-16 bg-white shadow-shadow shadow-lg`}>
+            <Text style={tw`text-black`}>Challenges Completed</Text>
+          </TouchableOpacity>
+        )}
+        {user && (
+          <TouchableOpacity
+            style={tw`w-full p-4 rounded-xl mt-5 bg-white shadow-shadow shadow-lg`}>
+            <Text style={tw`text-black`}>Rewards</Text>
+          </TouchableOpacity>
+        )}
+        {user && (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('UserPostsScreen', {
+                ...user,
+              })
+            }
+            style={tw`w-full p-4 rounded-xl mt-5 mb-10 bg-white shadow-shadow shadow-lg`}>
+            <Text style={tw`text-black`}>Your Posts</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </ScrollView>
   );

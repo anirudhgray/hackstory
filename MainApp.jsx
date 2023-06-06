@@ -21,6 +21,8 @@ import ProfileScreen from './screens/ProfileScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import MapScreen from './screens/MapScreen';
 import RootTabs from './navigation/RootTabs';
+import UserPostsScreen from './screens/UserPostsScreen';
+import UserChallengesScreen from './screens/UserChallengesScreen';
 // import {initialiseStore} from './slices/AuthSlice';
 
 function MainApp() {
@@ -49,6 +51,16 @@ function MainApp() {
           <Stack.Navigator screenOptions={navigatorOptions}>
             <Stack.Screen name="Root" component={RootTabs} />
             <Stack.Screen name="Profile" component={ProfileScreen} />
+            <Stack.Screen
+              name="UserPostsScreen"
+              component={UserPostsScreen}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="UserChallengesScreen"
+              component={UserChallengesScreen}
+              options={{headerShown: false}}
+            />
           </Stack.Navigator>
         ) : (
           <Stack.Navigator screenOptions={navigatorOptions}>

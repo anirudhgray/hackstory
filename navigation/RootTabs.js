@@ -8,6 +8,7 @@ import ChallengesStack from './ChallengesStack';
 const navigatorOptions = {};
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Icon} from '@rneui/themed';
+import AllPostsScreen from '../screens/AllPostsScreen';
 
 const RootTabs = () => {
   const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ const RootTabs = () => {
 
           if (route.name === 'Home') {
             iconName = 'home';
-          } else if (route.name === 'Map') {
+          } else if (route.name === 'Explore') {
             iconName = 'map';
           } else if (route.name === 'Challenges') {
             iconName = 'package';
@@ -36,8 +37,9 @@ const RootTabs = () => {
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
       })}>
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Home" component={HomeStack} />
+      {/* <Tab.Screen name="Map" component={MapScreen} /> */}
+      <Tab.Screen name="Home" component={AllPostsScreen} />
+      <Tab.Screen name="Explore" component={HomeStack} />
       <Tab.Screen name="Challenges" component={ChallengesStack} />
     </Tab.Navigator>
   );

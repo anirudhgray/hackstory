@@ -53,7 +53,7 @@ const RegisterScreen = () => {
         source={require('../assets/logoBlack.png')}
       /> */}
       <AuthTabBar />
-      <View style={tw`grow`}>
+      <View style={tw`grow mt-5`}>
         <TextInput
           placeholder="Dorian Gray"
           value={name}

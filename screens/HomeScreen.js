@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import tw from '../lib/tailwind';
 import Header from '../components/Header';
 import MasonryList from 'react-native-masonry-list';
+import {Icon} from '@rneui/themed';
 
 const HomeScreen = () => {
   const handleImagePress = (item, index) => {
@@ -10,6 +11,7 @@ const HomeScreen = () => {
   };
   return (
     <SafeAreaView style={tw`bg-white h-full relative flex flex-col`}>
+      {/* <Icon style={tw``} name='plus' type='feather' /> */}
       <Header title="Explore" showHamburger />
       {/* <View style={tw`flex flex col`}>
         <View>

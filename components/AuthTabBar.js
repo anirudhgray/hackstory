@@ -1,4 +1,4 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import tw from '../lib/tailwind';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -14,7 +14,7 @@ const AuthTabBar = ({login}) => {
             style={tw`relative grow pt-5 pb-10 border-b border-black ${
               login ? 'border-solid' : 'border-dashed'
             }`}>
-            <Text style={tw`text-black text-center`}>Login</Text>
+            <Text style={styles.laila}>LOGIN</Text>
             {login ? (
               <Image
                 style={tw`absolute bottom-0`}
@@ -30,7 +30,7 @@ const AuthTabBar = ({login}) => {
             style={tw`relative grow pt-5 pb-10 border-b border-black ${
               !login ? 'border-solid' : 'border-dashed'
             }`}>
-            <Text style={tw`text-black text-center`}>Sign Up</Text>
+            <Text style={styles.laila}>SIGN UP</Text>
 
             {!login ? (
               <Image
@@ -44,5 +44,15 @@ const AuthTabBar = ({login}) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  laila: {
+    fontFamily: 'Laila-Regular',
+    color: 'black',
+    fontSize: 25,
+    fontWeight: 500,
+    alignSelf: 'center',
+  },
+});
 
 export default AuthTabBar;

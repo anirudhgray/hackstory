@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import tw from '../lib/tailwind';
 import {Icon} from '@rneui/themed';
@@ -11,7 +11,7 @@ import {useDispatch} from 'react-redux';
 import {logout} from '../slices/AuthSlice';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
 
-const Header = ({title, showHamburger}) => {
+const Header = ({title, showHamburger, showFilter}) => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const [active, setActive] = useState('');
@@ -37,16 +37,24 @@ const Header = ({title, showHamburger}) => {
         style={tw`relative w-screen flex flex-row justify-between items-center pl-7 ${
           !showHamburger && 'p-7'
         } z-1`}>
-        <Text style={tw`text-3xl text-black`}>{title || ''}</Text>
-        {showHamburger && (
-          <TouchableOpacity onPress={() => setActive(!active)} hitSlop={10}>
-            <Icon
-              style={tw`mt-1 p-7`}
-              type="MaterialIcons"
-              name="emoji-food-beverage"
-            />
-          </TouchableOpacity>
-        )}
+        <Text style={styles.laila}>{title || ''}</Text>
+        <View style={tw`flex flex-row`}>
+          {showFilter && (
+            <TouchableOpacity
+              style={tw`pt-1 flex flex-row shrink items-center`}>
+              <Icon name="filter" type="feather" />
+            </TouchableOpacity>
+          )}
+          {showHamburger && (
+            <TouchableOpacity onPress={() => setActive(!active)} hitSlop={10}>
+              <Icon
+                style={tw`mt-1 p-7`}
+                type="MaterialIcons"
+                name="emoji-food-beverage"
+              />
+            </TouchableOpacity>
+          )}
+        </View>
         <View
           style={tw` z-3 absolute bottom-0 right-0 mr-3 p-4 -mb-40 bg-highlight dark:bg-buttons ${
             active ? '' : 'hidden'
@@ -68,5 +76,14 @@ const Header = ({title, showHamburger}) => {
     </OutsidePressHandler>
   );
 };
+
+const styles = StyleSheet.create({
+  laila: {
+    fontFamily: 'Laila-SemiBold',
+    color: 'black',
+    fontSize: 30,
+    fontWeight: 600,
+  },
+});
 
 export default Header;

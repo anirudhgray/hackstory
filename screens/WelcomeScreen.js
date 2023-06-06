@@ -1,4 +1,11 @@
-import {View, Text, SafeAreaView, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from 'react-native';
 import React from 'react';
 import tw from '../lib/tailwind';
 // import Metro from '../assets/metro.svg';
@@ -13,8 +20,8 @@ const WelcomeScreen = () => {
         style={{width: 37, height: 44, alignSelf: 'center'}}
         source={require('../assets/logoBlack.png')}
       />
-      <Text style={tw`text-xl mb-3 mt-8 text-black`}>Welcome,</Text>
-      <Text style={tw`text-black mb-10`}>
+      <Text style={[styles.title]}>Welcome,</Text>
+      <Text style={[styles.desc]}>
         Discover the vibrant tapestry of Delhi, where history meets modernity.
         Get ready to explore Delhi like never before! kyuki bro, dilli ek vibe
         hai.
@@ -23,7 +30,7 @@ const WelcomeScreen = () => {
         <TouchableOpacity onPress={() => navigation.push('Auth')}>
           <View
             style={tw`relative grow pt-5 border-b border-black border-solid`}>
-            <Text style={tw`text-right text-black`}>Enter</Text>
+            <Text style={tw`text-right text-black`}>Let's go!</Text>
             <Image
               style={tw`absolute bottom-0`}
               source={require('../assets/metroLarge.png')}
@@ -39,5 +46,21 @@ const WelcomeScreen = () => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  title: {
+    fontFamily: 'Laila-SemiBold',
+    fontWeight: 600,
+    marginBottom: 12,
+    marginTop: 32,
+    fontSize: 20,
+    color: 'black',
+  },
+  desc: {
+    fontFamily: 'Laila-Regular',
+    marginBottom: 40,
+    color: 'black',
+  },
+});
 
 export default WelcomeScreen;

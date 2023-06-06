@@ -14,8 +14,10 @@ const ChallengesScreen = () => {
     <View style={tw`bg-white h-screen`}>
       <Header title={'Challenges'} showHamburger />
       {/* <Text>ChallengesScreen</Text> */}
-      <TouchableOpacity style={tw`mx-10 py-2 bg-buttons rounded-xl`}>
-        <Text style={tw`text-center text-black`}>Leaderboard</Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('LeaderboardScreen')}
+        style={tw`mx-10 py-2 rounded-xl`}>
+        <Text style={styles.laila}>Leaderboard</Text>
       </TouchableOpacity>
       <ScrollView style={tw`mx-6 mt-5 mb-24`}>
         <TouchableOpacity
@@ -34,13 +36,17 @@ const ChallengesScreen = () => {
               source={require('../assets/indiagate.png')}
             />
           </View>
-          <View style={tw`p-2 flex shrink flex-row`}>
-            <Text style={tw`text-black flex-1 flex-wrap`}>
-              #1 You'll be given part of a photo of an iconic Delhi location...
+          <View style={tw`p-2 flex flex-col shrink`}>
+            <Text style={tw`font-semibold text-black flex-1 flex-wrap`}>
+              #1 Beyond The Frame
+            </Text>
+            <Text style={tw`text-black flex-1 flex-wrap text-black`}>
+              You'll be given part of a photo of an iconic Delhi location...
             </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
+          onPress={() => navigation.navigate('QuizChallengeScreen')}
           style={tw`flex bg-white m-4 shadow-shadow shadow-xl items-center flex-row h-24 rounded-xl`}>
           <View>
             <Image
@@ -55,9 +61,12 @@ const ChallengesScreen = () => {
               source={require('../assets/metroLarge.png')}
             />
           </View>
-          <View style={tw`p-2 flex shrink flex-row`}>
-            <Text style={tw`text-black flex-1 flex-wrap`}>
-              #2 Quizzes and Polls! What's not to love /s
+          <View style={tw`p-2 flex shrink flex-col`}>
+            <Text style={tw`font-semibold text-black flex-1 flex-wrap`}>
+              #2 Quiz Khaas
+            </Text>
+            <Text style={tw`text-black flex-1 flex-wrap text-black`}>
+              Quiz out questions ranging from Delhi basics...
             </Text>
           </View>
         </TouchableOpacity>
@@ -66,5 +75,15 @@ const ChallengesScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  laila: {
+    fontFamily: 'Laila-Regular',
+    color: 'black',
+    fontSize: 15,
+    fontWeight: 500,
+    alignSelf: 'flex-end',
+  },
+});
 
 export default ChallengesScreen;
